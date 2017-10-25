@@ -16,6 +16,10 @@ go get github.com/ThomasHuke/per
 ```go
 per.Run(url)
 ```
+
+API: please see the doc
+
+example: please see the example
 ## Donate
 
 [Donate](https://www.github.com/ThomasHuke/donate)
