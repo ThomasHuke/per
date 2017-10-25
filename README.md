@@ -2,7 +2,7 @@
 Heigh performance and easy-using crawler
 
 - Heigh performance : the Concurrent crawler
-- easy-using: easy to use ,per have a simple API everyone can use it
+- easy-using: easily to use ,per have a simple API everyone can use it
 
 ## Install
 ```go
