@@ -2,7 +2,7 @@
 
 - [type Md struct](#Md)
 - [type Json struct](#Json)
-- [type Plain struct](####Plain)
+- [type Plain struct](#Plain)
 # Md
  ``` go
  // 输出类型是Md
@@ -26,7 +26,7 @@
     }
 ```
 
-** typ是一个interface，内部已经通过几个不同的struct类型实现了这个interface，所以在这个位置上你只需要传入一个struct类型即可。**
+**typ是一个interface，内部已经通过几个不同的struct类型实现了这个interface，所以在这个位置上你只需要传入一个struct类型即可**
 
 ```go
 //输入你要爬取的URL
