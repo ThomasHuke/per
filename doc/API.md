@@ -1,12 +1,16 @@
 # API
 
+- [type Md struct](#Md)
+- [type Json struct](#Json)
+- [type Plain struct](#Plain)
+#### Md
  ``` go
  // 输出类型是Md
  type MD{
     s string
  }
  ```
-
+#### Json
  ```go
   // 输出类型是json
     type Json {
@@ -14,7 +18,7 @@
     }
 ```
 
-
+#### Plain
  ```go
   // 输出类型是文本
     type Plain {
@@ -22,9 +26,10 @@
     }
 ```
 
+** typ是一个interface，内部已经通过几个不同的struct类型实现了这个interface，所以在这个位置上你只需要传入一个struct类型即可。**
+
 ```go
 //输入你要爬取的URL
-typ是一个interface，内部已经通过几个不同的struct类型实现了这个interface，所以在这个位置上你只需要传入一个struct类型即可。
 func Run (url, ty string, t typ) error
 
 ```
