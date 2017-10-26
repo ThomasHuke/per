@@ -3,14 +3,16 @@
 - [type Md struct](#Md)
 - [type Json struct](#Json)
 - [type Plain struct](#Plain)
-# Md
+#### md
+
  ``` go
  // 输出类型是Md
  type MD{
     s string
  }
  ```
-# Json
+#### json
+
  ```go
   // 输出类型是json
     type Json {
@@ -18,7 +20,8 @@
     }
 ```
 
-# Plain
+#### plain
+
  ```go
   // 输出类型是文本
     type Plain {
