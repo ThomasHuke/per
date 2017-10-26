@@ -7,31 +7,31 @@ type typ interface {
 }
 
 //输出是md的类型
-type md struct {
+type Md struct {
 	s string
 }
 
 //输出是文本类型
-type plain struct {
+type Plain struct {
 	s string
 }
 
 //输出是json类型
-type json struct {
+type Json struct {
 	s string
 }
 
 //md 类型实现interface
-func (m md) put(s string) error {
+func (m Md) put(s string) error {
 
 }
 
 // 文本类型实现接口
-func (p plain) put(s string) error {
+func (p Plain) put(s string) error {
 
 }
 
 // json类型实现接口
-func (j json) put(s string) error {
+func (j Json) put(s string) error {
 
 }

@@ -6,7 +6,8 @@ import (
 	"net/http"
 )
 
-//Run 作为对外暴露的主函数。
+//Run 作为对外暴露的主函数。这里t是一个interface的实例当然也就是一个struct，所以我们只要在输入数据的时候
+//输入Type Plain Json Md 类型的 struct即可。
 func Run(url, ty string, t typ) {
 	res, err := http.Get(url)
 	if err != nil {
