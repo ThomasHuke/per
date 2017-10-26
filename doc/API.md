@@ -1,8 +1,8 @@
 # API
 
-- [type Md struct](#Md)
-- [type Json struct](#Json)
-- [type Plain struct](#Plain)
+- [type Md struct](#md)
+- [type Json struct](#json)
+- [type Plain struct](#plain)
 #### md
 
  ``` go
