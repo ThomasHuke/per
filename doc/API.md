@@ -2,7 +2,7 @@
 
 - [type Md struct](#Md)
 - [type Json struct](#Json)
-- [type Plain struct](#Plain)
+- [type Plain struct](####Plain)
 #### Md
  ``` go
  // 输出类型是Md
