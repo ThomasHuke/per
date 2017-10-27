@@ -1,9 +1,14 @@
 package per
 
+import (
+	"fmt"
+	"os"
+)
+
 // typ 一个interface 目的是为了解决不同的输出。
 type typ interface {
 	//
-	put(s string) error
+	put(s, m string) error
 }
 
 //输出是md的类型
@@ -22,16 +27,43 @@ type Json struct {
 }
 
 //md 类型实现interface
-func (m Md) put(s string) error {
+func (md Md) put(m string) {
+	s := "~/Desktop" + md.s + ".md"
+	file, err := os.Create(s)
+	if err != nil {
+		fmt.Println(err)
+	}
+	_, err = file.WriteString(m)
+	if err != nil {
+		fmt.Println(err)
+	}
 
 }
 
 // 文本类型实现接口
-func (p Plain) put(s string) error {
+func (p Plain) put(m string) {
+	s := "~/Desktop" + p.s + ".text"
+	file, err := os.Create(s)
+	if err != nil {
+		fmt.Println(err)
+	}
+	_, err = file.WriteString(m)
+	if err != nil {
+		fmt.Println(err)
+	}
 
 }
 
 // json类型实现接口
-func (j Json) put(s string) error {
-
+func (j Json) put(m string) {
+	s := "~/Desktop" + j.s + ".json"
+	file, err := os.Create(s)
+	if err != nil {
+		fmt.Println(err)
+	}
+	m = "{" + "message" + ":" + "\"" + m + "\"" + "}"
+	_, err = file.WriteString(m)
+	if err != nil {
+		fmt.Println(nil)
+	}
 }
