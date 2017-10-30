@@ -28,7 +28,7 @@ type JSON struct {
 
 //md 类型实现interface m 是信息。 md.S 是文件名
 func (md Md) put(m string) {
-	s := "~/Desktop/" + md.S + ".md"
+	s := md.S + ".md"
 	file, err := os.Create(s)
 	if err != nil {
 		fmt.Println(err)
@@ -44,7 +44,7 @@ func (md Md) put(m string) {
 
 // 文本类型实现接口
 func (p Plain) put(m string) {
-	s := "~/Desktop/" + p.S + ".text"
+	s := p.S + ".text"
 	file, err := os.Create(s)
 	if err != nil {
 		fmt.Println(err)
@@ -60,7 +60,7 @@ func (p Plain) put(m string) {
 
 // json类型实现接口
 func (j JSON) put(m string) {
-	s := j.S
+	s := j.S + ".json"
 	file, err := os.Create(s)
 	if err != nil {
 		fmt.Println(err)
