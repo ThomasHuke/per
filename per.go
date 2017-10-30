@@ -3,7 +3,6 @@ package per
 import (
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
 )
 
@@ -25,13 +24,11 @@ func tt(url []string, d chan string) {
 		res, err := http.Get(value)
 		if err != nil {
 			fmt.Println("错误出现在主函数获取资源的时候 ")
-			log.Fatalln(err)
 		}
 		defer res.Body.Close()
 		body, err := ioutil.ReadAll(res.Body)
 		if err != nil {
 			fmt.Println("错误出现在资源转换的时候")
-			log.Fatalln(err)
 		}
 		d <- string(body)
 	}
