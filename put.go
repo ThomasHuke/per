@@ -22,7 +22,7 @@ type Plain struct {
 }
 
 //输出是json类型
-type Json struct {
+type JSON struct {
 	s string
 }
 
@@ -55,7 +55,7 @@ func (p Plain) put(m string) {
 }
 
 // json类型实现接口
-func (j Json) put(m string) {
+func (j JSON) put(m string) {
 	s := "~/Desktop" + j.s + ".json"
 	file, err := os.Create(s)
 	if err != nil {
