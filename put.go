@@ -33,7 +33,6 @@ func (md Md) put(m string) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	defer file.Close()
 	_, err = file.WriteString(m)
 	if err != nil {
 		fmt.Println("错误出现在写入区域")
@@ -49,7 +48,6 @@ func (p Plain) put(m string) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	defer file.Close()
 	_, err = file.WriteString(m)
 	if err != nil {
 		fmt.Println("错误出现在写入区域")
@@ -65,7 +63,7 @@ func (j JSON) put(m string) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	defer file.Close()
+
 	m = "{" + "\"message\"" + ":" + "\"" + m + "\"" + "}"
 	_, err = file.WriteString(m)
 	if err != nil {
