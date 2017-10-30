@@ -33,7 +33,6 @@ func tt(url []string, d chan string) {
 			fmt.Println("错误出现在资源转换的时候")
 			log.Fatalln(err)
 		}
-		fmt.Print("The output is :", *res)
 		d <- string(body)
 	}
 	close(d)
