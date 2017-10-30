@@ -30,7 +30,7 @@ type JSON struct {
 func (md Md) put(m string) {
 	s := "~/Desktop/" + md.S + ".md"
 	file := os.NewFile(0, s)
-
+	defer file.Close()
 	_, err := file.WriteString(m)
 	if err != nil {
 		fmt.Println("错误出现在写入区域")
@@ -43,6 +43,7 @@ func (md Md) put(m string) {
 func (p Plain) put(m string) {
 	s := "~/Desktop/" + p.S + ".text"
 	file := os.NewFile(0, s)
+	defer file.Close()
 	_, err := file.WriteString(m)
 	if err != nil {
 		fmt.Println("错误出现在写入区域")
@@ -55,7 +56,7 @@ func (p Plain) put(m string) {
 func (j JSON) put(m string) {
 	s := "~/Desktop/" + j.S + ".json"
 	file := os.NewFile(0, s)
-
+	defer file.Close()
 	m = "{" + "message" + ":" + "\"" + m + "\"" + "}"
 	_, err := file.WriteString(m)
 	if err != nil {
