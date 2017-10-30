@@ -13,22 +13,22 @@ type typ interface {
 
 //输出是md的类型
 type Md struct {
-	s string
+	S string
 }
 
 //输出是文本类型
 type Plain struct {
-	s string
+	S string
 }
 
 //输出是json类型
 type JSON struct {
-	s string
+	S string
 }
 
 //md 类型实现interface
 func (md Md) put(m string) {
-	s := "~/Desktop" + md.s + ".md"
+	s := "~/Desktop" + md.S + ".md"
 	file, err := os.Create(s)
 	if err != nil {
 		fmt.Println(err)
@@ -42,7 +42,7 @@ func (md Md) put(m string) {
 
 // 文本类型实现接口
 func (p Plain) put(m string) {
-	s := "~/Desktop" + p.s + ".text"
+	s := "~/Desktop" + p.S + ".text"
 	file, err := os.Create(s)
 	if err != nil {
 		fmt.Println(err)
@@ -56,7 +56,7 @@ func (p Plain) put(m string) {
 
 // json类型实现接口
 func (j JSON) put(m string) {
-	s := "~/Desktop" + j.s + ".json"
+	s := "~/Desktop" + j.S + ".json"
 	file, err := os.Create(s)
 	if err != nil {
 		fmt.Println(err)
