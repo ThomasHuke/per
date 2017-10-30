@@ -8,12 +8,12 @@ import (
 //这个文件的目的就是为了处理get获得的各种资源，使用正则即可。
 func dealWith(body string) string {
 	body = simpleDealwith(body)
-	body = plusDealwith(body)
+	// body = plusDealwith(body)
 	return body
 }
 
 // 简单的处理
-func simpleDealwith(src sting) string {
+func simpleDealwith(src string) string {
 	//将HTML标签全转换成小写
 	re, _ := regexp.Compile("\\<[\\S\\s]+?\\>")
 	src = re.ReplaceAllStringFunc(src, strings.ToLower)
@@ -37,7 +37,7 @@ func simpleDealwith(src sting) string {
 	return strings.TrimSpace(src)
 }
 
-// 更加复杂的处理
-func plusDealwith(s string) string {
-
-}
+// // 更加复杂的处理
+// func plusDealwith(s string) string {
+//
+// }
