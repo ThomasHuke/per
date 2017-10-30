@@ -29,12 +29,9 @@ type JSON struct {
 //md 类型实现interface m 是信息。 md.S 是文件名
 func (md Md) put(m string) {
 	s := "~/Desktop/" + md.S + ".md"
-	file, err := os.Create(s)
-	if err != nil {
-		fmt.Println("错误出现在创建区域")
-		fmt.Println(err)
-	}
-	_, err = file.WriteString(m)
+	file := os.NewFile(0, s)
+
+	_, err := file.WriteString(m)
 	if err != nil {
 		fmt.Println("错误出现在写入区域")
 		fmt.Println(err)
@@ -45,12 +42,8 @@ func (md Md) put(m string) {
 // 文本类型实现接口
 func (p Plain) put(m string) {
 	s := "~/Desktop/" + p.S + ".text"
-	file, err := os.Create(s)
-	if err != nil {
-		fmt.Println("错误出现在创建区域")
-		fmt.Println(err)
-	}
-	_, err = file.WriteString(m)
+	file := os.NewFile(0, s)
+	_, err := file.WriteString(m)
 	if err != nil {
 		fmt.Println("错误出现在写入区域")
 		fmt.Println(err)
@@ -61,13 +54,10 @@ func (p Plain) put(m string) {
 // json类型实现接口
 func (j JSON) put(m string) {
 	s := "~/Desktop/" + j.S + ".json"
-	file, err := os.Create(s)
-	if err != nil {
-		fmt.Println("错误出现在创建区域")
-		fmt.Println(err)
-	}
+	file := os.NewFile(0, s)
+
 	m = "{" + "message" + ":" + "\"" + m + "\"" + "}"
-	_, err = file.WriteString(m)
+	_, err := file.WriteString(m)
 	if err != nil {
 		fmt.Println("错误出现在写入区域")
 		fmt.Println(nil)
