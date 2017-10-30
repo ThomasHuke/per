@@ -26,15 +26,17 @@ type JSON struct {
 	S string
 }
 
-//md 类型实现interface
+//md 类型实现interface m 是信息。 md.S 是文件名
 func (md Md) put(m string) {
 	s := "~/Desktop" + md.S + ".md"
 	file, err := os.Create(s)
 	if err != nil {
+		fmt.Println("错误出现在创建区域")
 		fmt.Println(err)
 	}
 	_, err = file.WriteString(m)
 	if err != nil {
+		fmt.Println("错误出现在写入区域")
 		fmt.Println(err)
 	}
 
@@ -45,10 +47,12 @@ func (p Plain) put(m string) {
 	s := "~/Desktop" + p.S + ".text"
 	file, err := os.Create(s)
 	if err != nil {
+		fmt.Println("错误出现在创建区域")
 		fmt.Println(err)
 	}
 	_, err = file.WriteString(m)
 	if err != nil {
+		fmt.Println("错误出现在写入区域")
 		fmt.Println(err)
 	}
 
@@ -59,11 +63,13 @@ func (j JSON) put(m string) {
 	s := "~/Desktop" + j.S + ".json"
 	file, err := os.Create(s)
 	if err != nil {
+		fmt.Println("错误出现在创建区域")
 		fmt.Println(err)
 	}
 	m = "{" + "message" + ":" + "\"" + m + "\"" + "}"
 	_, err = file.WriteString(m)
 	if err != nil {
+		fmt.Println("错误出现在写入区域")
 		fmt.Println(nil)
 	}
 }

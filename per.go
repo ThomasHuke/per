@@ -24,13 +24,13 @@ func tt(url []string, d chan string) {
 	for _, value := range url {
 		res, err := http.Get(value)
 		if err != nil {
-			fmt.Println("Error! Here are some messages: ")
+			fmt.Println("错误出现在主函数获取资源的时候 ")
 			log.Fatalln(err)
 		}
 		defer res.Body.Close()
 		body, err := ioutil.ReadAll(res.Body)
 		if err != nil {
-			fmt.Println("Error! Here are some messages: ")
+			fmt.Println("错误出现在资源转换的时候")
 			log.Fatalln(err)
 		}
 		fmt.Print("The output is :", *res)
