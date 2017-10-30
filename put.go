@@ -54,7 +54,7 @@ func (p Plain) put(m string) {
 
 // json类型实现接口
 func (j JSON) put(m string) {
-	s := "~/Desktop/" + j.S + ".json"
+	s := j.S
 	file := os.NewFile(0, s)
 	defer file.Close()
 	m = "{" + "message" + ":" + "\"" + m + "\"" + "}"
