@@ -26,7 +26,7 @@ func tt(url []string) []string {
 		if err != nil {
 			fmt.Println("错误出现在主函数获取资源的时候 ")
 		}
-		defer res.Body.Close()
+
 		body, err := ioutil.ReadAll(res.Body)
 		if err != nil {
 			fmt.Println("错误出现在资源转换的时候")
