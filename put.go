@@ -66,7 +66,7 @@ func (j JSON) put(m string) {
 		fmt.Println(err)
 	}
 	defer file.Close()
-	m = "{" + "message" + ":" + "\"" + m + "\"" + "}"
+	m = "{" + "\"message\"" + ":" + "\"" + m + "\"" + "}"
 	_, err = file.WriteString(m)
 	if err != nil {
 		fmt.Println("错误出现在写入区域")
