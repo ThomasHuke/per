@@ -33,7 +33,7 @@ func (md Md) put(m string) {
 	var file *os.File
 	s := md.S + ".md"
 	_, err := file.WriteString(m)
-	if err := os.IsExist(err); err {
+	if bo := os.IsExist(err); !bo {
 		file, _ = os.Create(s)
 	}
 
