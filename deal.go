@@ -37,7 +37,8 @@ func simpleDealwith(src string) string {
 	src = re.ReplaceAllString(src, "")
 	re, _ = regexp.Compile("[A-Z]+")
 	src = re.ReplaceAllString(src, "")
-
+	re, _ = regexp.Compile("\\s{2,}")
+	src = re.ReplaceAllString(src, "")
 	return strings.TrimSpace(src)
 }
 
