@@ -32,9 +32,14 @@ var file *os.File
 
 func (md Md) put(m string) {
 	s := md.S + ".md"
-	_, err := file.WriteString(m)
-	if bo := os.IsExist(err); !bo {
-		file, _ = os.Create(s)
+	file, err := os.Create(s)
+	if err != nil {
+		fmt.Println(err)
+	}
+	_, err = file.WriteString(m)
+	if err != nil {
+		fmt.Println("错误出现在写入区域")
+		fmt.Println(err)
 	}
 
 }
