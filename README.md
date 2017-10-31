@@ -14,7 +14,7 @@ go get github.com/ThomasHuke/per
 ## Quick Start
 
 ```go
-per.Run(url)
+per.Run(url, ty)
 ```
 
 API: please see the doc
