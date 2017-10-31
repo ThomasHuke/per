@@ -6,6 +6,17 @@ import (
 	"net/http"
 )
 
+//RunALL批量处理数据
+func RunALL(url []string, t []typ) {
+	for _, i := range url {
+		for _, z := range t {
+			Run(i, z)
+		}
+
+	}
+
+}
+
 func Run(url string, t typ) {
 	ace := tt(url)
 	// dealWith处理接收到的信息。
