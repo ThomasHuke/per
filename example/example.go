@@ -1,18 +1,11 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/github.com/thomashuke/per"
+	p "github.com/thomashuke/per"
 )
 
-type name struct {
-	text per.Plain
-	md   per.Md
-	json per.Json
-}
-
 func main() {
-	fmt.Println("hey i am using the great crawler which is named per and  created by ThomasHuke")
-	per.Run()
+	url := "http://zhihu.com"
+	ty := p.Md{"outPut"}
+	p.Run(url, ty)
 }
