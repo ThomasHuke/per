@@ -7,12 +7,13 @@ import (
 
 // typ 一个interface 目的是为了解决不同的输出。
 type typ interface {
-	//
+	// 文件的输出
 	put(m string)
 }
 
 //输出是md的类型
 type Md struct {
+	//文件名
 	S string
 }
 
@@ -27,16 +28,13 @@ type JSON struct {
 }
 
 //md 类型实现interface m 是信息。 md.S 是文件名
+
 func (md Md) put(m string) {
+	var file *os.File
 	s := md.S + ".md"
-	file, err := os.Create(s)
-	if err != nil {
-		fmt.Println(err)
-	}
-	_, err = file.WriteString(m)
-	if err != nil {
-		fmt.Println("错误出现在写入区域")
-		fmt.Println(err)
+	_, err := file.WriteString(m)
+	if err := os.IsExist(err); err {
+		file, _ = os.Create(s)
 	}
 
 }
