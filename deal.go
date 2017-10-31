@@ -33,7 +33,9 @@ func simpleDealwith(src string) string {
 	//去除连续的换行符
 	re, _ = regexp.Compile("\\s{2,}")
 	src = re.ReplaceAllString(src, "\n\n")
-	re, _ = regexp.Compile("[a-z]+||[A-Z]+")
+	re, _ = regexp.Compile("[a-z]+")
+	src = re.ReplaceAllString(src, "")
+	re, _ = regexp.Compile("[A-Z]+")
 	src = re.ReplaceAllString(src, "")
 
 	return strings.TrimSpace(src)
