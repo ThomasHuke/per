@@ -7,7 +7,7 @@ import (
 )
 
 //RunALL批量处理数据
-func RunALL(url []string, t []typ) {
+func RunALL(url []string, t []Typ) {
 	for _, i := range url {
 		for _, z := range t {
 			Run(i, z)
@@ -17,7 +17,7 @@ func RunALL(url []string, t []typ) {
 
 }
 
-func Run(url string, t typ) {
+func Run(url string, t Typ) {
 	ace := tt(url)
 	// dealWith处理接收到的信息。
 	message := dealWith(ace)

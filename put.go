@@ -6,7 +6,7 @@ import (
 )
 
 // typ 一个interface 目的是为了解决不同的输出。
-type typ interface {
+type Typ interface {
 	// 文件的输出
 	put(m string)
 }
