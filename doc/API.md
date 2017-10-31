@@ -36,6 +36,6 @@
 
 ```go
 //输入你要爬取的URL
-func Run (url, ty string, t typ) error
+func Run (url string, ty p.typ)
 
 ```
