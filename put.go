@@ -28,9 +28,9 @@ type JSON struct {
 }
 
 //md 类型实现interface m 是信息。 md.S 是文件名
+var file *os.File
 
 func (md Md) put(m string) {
-	var file *os.File
 	s := md.S + ".md"
 	_, err := file.WriteString(m)
 	if bo := os.IsExist(err); !bo {
