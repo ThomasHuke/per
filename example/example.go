@@ -7,5 +7,5 @@ import (
 func main() {
 	url := "http://zhihu.com"
 	ty := p.Md{"outPut"}
-	p.Run(url, ty)
+	p.Run(url, ty, 0)
 }
