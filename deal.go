@@ -6,9 +6,9 @@ import (
 )
 
 //这个文件的目的就是为了处理get获得的各种资源，使用正则即可。
-func dealWith(body string) string {
+func dealWith(body string, t int) string {
 	body = simpleDealwith(body)
-	// body = plusDealwith(body)
+	body = plusDealwith(t, body)
 	return body
 }
 
@@ -33,16 +33,20 @@ func simpleDealwith(src string) string {
 	//去除连续的换行符
 	re, _ = regexp.Compile("\\s{2,}")
 	src = re.ReplaceAllString(src, "\n\n")
-	// 去除英语单词
-	re, _ = regexp.Compile("[[:alpha:]]*")
-	src = re.ReplaceAllString(src, "")
-	// 去除连续两个或者大于两个的换行符
-	re, _ = regexp.Compile("\\s{2,}")
-	src = re.ReplaceAllString(src, "")
 	return strings.TrimSpace(src)
 }
 
 // // 更加复杂的处理
-// func plusDealwith(s string) string {
-//
-// }
+func plusDealwith(s int, src string) string {
+	if s == 0 {
+		re, _ := regexp.Compile("[[:alpha:]]*")
+		src = re.ReplaceAllString(src, "")
+		// 去除连续两个或者大于两个的换行符
+		re, _ = regexp.Compile("\\s{2,}")
+		src = re.ReplaceAllString(src, "")
+		return strings.TrimSpace(src)
+	} else {
+		return src
+	}
+
+}

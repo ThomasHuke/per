@@ -6,10 +6,10 @@ import (
 	"net/http"
 )
 
-func Run(url string, t Typ) {
+func Run(url string, t Typ, t1 int) {
 	ace := tt(url)
 	// dealWith处理接收到的信息。
-	message := dealWith(ace)
+	message := dealWith(ace, t1)
 	//然后将信息传递给put方法，这样put就可以生成一个拥有信息的一个文件，并且这个文件默认是放置到桌面的
 	//后者是说目前我强制它放置到桌面了。
 	t.put(message)

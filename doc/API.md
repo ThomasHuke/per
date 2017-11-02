@@ -36,6 +36,7 @@
 
 ```go
 //输入你要爬取的URL
-func Run (url string, ty p.typ)
+func Run (url string, ty p.typ, t int)
 
 ```
+这个最后的t是判断输出是否要删除英文，是的话t != 0 如何想删除英语请让 t == 0
