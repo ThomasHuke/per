@@ -33,10 +33,10 @@ func simpleDealwith(src string) string {
 	//去除连续的换行符
 	re, _ = regexp.Compile("\\s{2,}")
 	src = re.ReplaceAllString(src, "\n\n")
-	re, _ = regexp.Compile("[a-z]+")
+	// 去除英语单词
+	re, _ = regexp.Compile("[[:alpha:]]*")
 	src = re.ReplaceAllString(src, "")
-	re, _ = regexp.Compile("[A-Z]+")
-	src = re.ReplaceAllString(src, "")
+	// 去除连续两个或者大于两个的换行符
 	re, _ = regexp.Compile("\\s{2,}")
 	src = re.ReplaceAllString(src, "")
 	return strings.TrimSpace(src)
